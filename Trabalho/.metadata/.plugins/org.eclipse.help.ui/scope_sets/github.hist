@@ -1,0 +1,5 @@
+#Thu Nov 06 13:06:46 BRST 2014
+__DEFAULT__=false
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.help.ui.localSearch.master=true
+expression=github
