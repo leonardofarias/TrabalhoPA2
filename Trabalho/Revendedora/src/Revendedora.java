@@ -3,6 +3,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //add comment
+//add comment 2 e enviando por aqui
+//testando de novo
 
 public class Revendedora implements _Revendedora {
 
