@@ -1,0 +1,4 @@
+
+public class VeiculoCarro extends Veiculo {
+	
+}

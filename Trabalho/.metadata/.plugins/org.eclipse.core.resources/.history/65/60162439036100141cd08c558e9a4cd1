@@ -1,0 +1,52 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Principal {
+
+	private static Scanner lerDados;
+
+	public static void main(String[] args) {
+		lerDados = new Scanner(System.in);
+		Revendedora xcar = new Revendedora();
+
+		int op = -1;
+		while (op != 5) {
+
+			System.out
+					.println("*****X-Car - Sistema de Vendas de Veículos*****");
+			System.out
+					.println("****************  M E N U  ********************");
+			System.out.println("*		1 ) Cadastro de Cliente	      *");
+			System.out.println("*		2 ) Cadastro de Veículos      *");
+			System.out.println("*		3 ) Cadastro de Funcionário   *");
+			System.out.println("*		4 ) Efetuar Venda             *");
+			System.out.println("*		5 ) Sair do Sistema           *");
+			System.out
+					.println("***********************************************");
+			System.out.print("Selecione: ");
+			try {
+				op = lerDados.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Selecione uma das opções do MENU");
+				op = -1;
+			} finally {
+				switch (op) {
+				case 1:
+					xcar.cadastrarCliente();
+					break;
+				case 2: // Revendedora.cadastrarVeiculo();
+					break;
+				case 3: // Revendedora.cadastrarFuncionario();
+					break;
+				case 4: // Revendedora efetuarVenda();
+					break;
+				case 5:
+					System.out.println("Sistema Finalizado!");
+					break;
+				default:
+					System.out.println("Selecione uma das opções do MENU!");
+				}
+			}
+		}
+	}
+}

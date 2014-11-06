@@ -1,0 +1,13 @@
+1414714431160	Encapsulate field 'cpf'
+1414714473495	Encapsulate field 'cnpj'
+1414714629927	Rename type 'VeiculoCarro'
+1414714817948	Delete element
+1414714833471	Encapsulate field 'tipo'
+1414714931886	Encapsulate field 'codFuncionario'
+1414715310284	Rename type 'PessoaFisica'
+1414715319342	Rename type 'PessoaJuridica'
+1414715419416	Rename type 'ClientPJ'
+1414717053110	Rename type 'Revendedora'
+1414717074860	Rename type 'Sistema'
+1414757435246	Convert local variable 'lerDados' to field
+1414758064515	Convert local variable 'lerDados' to field

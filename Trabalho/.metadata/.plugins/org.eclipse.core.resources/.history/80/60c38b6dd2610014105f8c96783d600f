@@ -1,0 +1,8 @@
+
+public class Venda {
+	private Pessoa cliente;
+	private Pessoa Vendedor;
+	private Veiculo veiculo;
+	
+	
+}
