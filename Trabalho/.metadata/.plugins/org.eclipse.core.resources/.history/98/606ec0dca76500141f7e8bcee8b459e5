@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//testando github
-
 public class Revendedora implements _Revendedora {
 
 	private ArrayList<ClientePF> listaClientePf;
