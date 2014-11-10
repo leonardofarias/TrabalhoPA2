@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//mexendo no git na aula de banco
+//mexendo no git na aula de banco na aula de engenharia de software
 
 public class Revendedora implements _Revendedora {
 
@@ -26,7 +26,7 @@ public class Revendedora implements _Revendedora {
 		int op = -1;
 		while (op != 5) {
 			System.out
-					.println("*****X-Car - Sistema de Vendas de Veículos*****");
+					.println("*****X-Car - Sistema de Vendas de VeÃ­culos*****");
 			System.out
 					.println("*****        CADASTRO DE CLIENTE          *****");
 			System.out.println("*		1 ) Pessoa Física             *");
@@ -70,7 +70,7 @@ public class Revendedora implements _Revendedora {
 					listarCliente(op);
 				break;
 			default:
-				System.out.println("Selecione uma das opções do MENU!");
+				System.out.println("Selecione uma das opÃ§Ãµes do MENU!");
 			}
 		}
 	}
@@ -217,14 +217,14 @@ public class Revendedora implements _Revendedora {
 		try {
 			op = lerDados.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("Insira somente numeros!");
+			System.out.println("Insira somente números!");
 			op = 0;
 		}
 		return op;
 	}
 
 	//método que efetua venda e salva em uma lista de vendas
-	//fazer validações
+	//fazer validaÃ§Ãµes
 	public void efetuarVenda() {
 		// TODO Auto-generated method stub
 		Scanner lerDados = new Scanner(System.in);
@@ -232,13 +232,13 @@ public class Revendedora implements _Revendedora {
 		System.out.println("3 ) Pessoa Física");
 		System.out.println("4 ) Pessoa Jurídica");
 		
-		System.out.print("Selecione tipo de Pessoa pelo número: ");
+		System.out.print("Selecione tipo de Pessoa pelo nÃºmero: ");
 		int n = lerDados.nextInt();
 		
 		System.out.println("******Lista de Clientes*******");
 		listarCliente(n);
 		
-		System.out.print("Selecione um dos clientes pelo número: ");
+		System.out.print("Selecione um dos clientes pelo nÃºmero: ");
 		int op = lerDados.nextInt();
 		Pessoa cliente = (n == 3) ?  listaClientePf.get(op-1) :
 						 (n == 4) ?  listaClientePj.get(op-1): null;
@@ -251,10 +251,10 @@ public class Revendedora implements _Revendedora {
 		
 		Vendedor vendedor = listaVendedor.get(op-1);
 		
-		System.out.println("Lista de Veículos");
+		System.out.println("Lista de VeÃ­culos");
 		listarVeiculo(listaVeiculo);
 		
-		System.out.print("Selecione um veículo: ");
+		System.out.print("Selecione um veÃ­culo: ");
 		op = lerDados.nextInt();
 		
 		Veiculo veiculo = listaVeiculo.get(op-1);
