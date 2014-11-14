@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//mexendo no git na aula de banco na aula de engenharia de software de novo
+//mexendo no git na aula de banco na aula de engenharia de software de novo teste
 
 public class Revendedora implements _Revendedora {
 
