@@ -2,7 +2,7 @@
 public class Vendedor extends Funcionario {
 	
 	private double salario;
-	private int comissao;
+	private double comissao;
 	
 	public double getSalario() {
 		return salario;
@@ -10,10 +10,10 @@ public class Vendedor extends Funcionario {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
-	public int getComissao() {
+	public double getComissao() {
 		return comissao;
 	}
-	public void setComissao(int comissao) {
+	public void setComissao(double comissao) {
 		this.comissao = comissao;
 	}
 }

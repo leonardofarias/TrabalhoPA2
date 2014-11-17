@@ -11,6 +11,7 @@ public class Revendedora implements _Revendedora {
 	private ArrayList<Vendedor> listaVendedor;
 	private ArrayList<Veiculo> listaVeiculo;
 	private ArrayList<Venda> listaVenda;
+	private Integer numeroNf;
 	private Scanner lerDados;
 
 	public Revendedora() {
@@ -19,6 +20,7 @@ public class Revendedora implements _Revendedora {
 		listaVendedor = new ArrayList<Vendedor>();
 		listaVeiculo = new ArrayList<Veiculo>();
 		listaVenda = new ArrayList<Venda>();
+		numeroNf = 0;
 	}
 
 	public void cadastrarCliente() {
@@ -26,11 +28,11 @@ public class Revendedora implements _Revendedora {
 		int op = -1;
 		while (op != 5) {
 			System.out
-					.println("*****X-Car - Sistema de Vendas de VeÃ­culos*****");
+					.println("*****X-Car - Sistema de Vendas de Veiculos*****");
 			System.out
 					.println("*****        CADASTRO DE CLIENTE          *****");
-			System.out.println("*		1 ) Pessoa Física             *");
-			System.out.println("* 		2 ) Pessoa Jurídica           *");
+			System.out.println("*		1 ) Pessoa Fisica             *");
+			System.out.println("* 		2 ) Pessoa Juridica           *");
 			System.out.println("* 		3 ) Listar PF		      *");
 			System.out.println("* 		4 ) Listar PJ		      *");
 			System.out.println("* 		5 ) MENU ANTERIOR             *");
@@ -70,7 +72,7 @@ public class Revendedora implements _Revendedora {
 					listarCliente(op);
 				break;
 			default:
-				System.out.println("Selecione uma das opÃ§Ãµes do MENU!");
+				System.out.println("Selecione uma das opÃƒÂ§ÃƒÂµes do MENU!");
 			}
 		}
 	}
@@ -80,11 +82,11 @@ public class Revendedora implements _Revendedora {
 		int op = -1;
 		while (op != 3) {
 			System.out
-					.println("*****X-Car - Sistema de Vendas de Veículos*****");
+					.println("*****X-Car - Sistema de Vendas de Veiculos*****");
 			System.out
-					.println("*****        CADASTRO DE VEÍCULOS         *****");
-			System.out.println("*		1 ) Veículo                   *");
-			System.out.println("* 		2 ) Listar Veículos	      *");
+					.println("*****        CADASTRO DE VEICULOS         *****");
+			System.out.println("*		1 ) Veiculo                   *");
+			System.out.println("* 		2 ) Listar Veiculos	      *");
 			System.out.println("* 		3 ) MENU ANTERIOR             *");
 			System.out
 					.println("***********************************************");
@@ -101,16 +103,16 @@ public class Revendedora implements _Revendedora {
 				novoVeiculo.setNome(lerDados.next());
 				System.out.print("Informe cor: ");
 				novoVeiculo.setCor(lerDados.next());
-				System.out.print("Informe preço: ");
+				System.out.print("Informe preco: ");
 				novoVeiculo.setPreco(lerDados.nextDouble());
 				listaVeiculo.add(novoVeiculo);
-				System.out.print("Cliente Cadastrado com sucesso!\n");
+				System.out.print("Veiculo Cadastrado com sucesso!\n");
 				break;
 			case 2:
 				listarVeiculo(listaVeiculo);
 				break;
 			default:
-				System.out.println("Selecione uma das opções do MENU!");
+				System.out.println("Selecione uma das opÃ§Ãµes do MENU!");
 			}
 		}
 	}
@@ -120,11 +122,11 @@ public class Revendedora implements _Revendedora {
 		int op = -1;
 		while (op != 3) {
 			System.out
-					.println("*****X-Car - Sistema de Vendas de Veículos*****");
+					.println("*****X-Car - Sistema de Vendas de Veiculos*****");
 			System.out
-					.println("*****        CADASTRO DE FUNCIONÁRIO      *****");
+					.println("*****        CADASTRO DE FUNCIONARIO      *****");
 			System.out.println("*		1 ) Vendedor                  *");
-			System.out.println("* 		2 ) Listar Funcionários	      *");
+			System.out.println("* 		2 ) Listar Funcionarios       *");
 			System.out.println("* 		3 ) MENU ANTERIOR             *");
 			System.out
 					.println("***********************************************");
@@ -135,7 +137,7 @@ public class Revendedora implements _Revendedora {
 			switch (op) {
 			case 1:
 				Vendedor novoVendedor = new Vendedor();
-				System.out.print("Informe o código: ");
+				System.out.print("Informe o codigo: ");
 				novoVendedor.setCodFuncionario(lerDados.nextInt());
 				System.out.print("Informe nome: ");
 				novoVendedor.setNome(lerDados.next());
@@ -143,10 +145,10 @@ public class Revendedora implements _Revendedora {
 				novoVendedor.setIdade(lerDados.nextInt());
 				System.out.print("Informe CPF: ");
 				novoVendedor.setCpf(lerDados.next());
-				System.out.print("Informe o salário: ");
+				System.out.print("Informe o salario: ");
 				novoVendedor.setSalario(lerDados.nextDouble());
-				System.out.print("Informe comissão: ");
-				novoVendedor.setComissao(lerDados.nextInt());
+				System.out.print("Informe comissao: ");
+				novoVendedor.setComissao(lerDados.nextDouble());
 				System.out.print("Cliente Cadastrado com sucesso!\n");
 				listaVendedor.add(novoVendedor);
 				break;
@@ -154,15 +156,15 @@ public class Revendedora implements _Revendedora {
 				listarVendedor(listaVendedor);
 				break;
 			default:
-				System.out.println("Selecione uma das opções do MENU!");
+				System.out.println("Selecione uma das opÃ§Ãµes do MENU!");
 			}
 		}
 	}
 
 	public void listarCliente(int opcao) {
-		
+
 		int cont = 1;
-		
+
 		if (opcao == 3) {
 			for (ClientePF cliente : listaClientePf) {
 				System.out.println(cont + " ) " + cliente.getNome() + " CPF: "
@@ -184,7 +186,7 @@ public class Revendedora implements _Revendedora {
 		for (Veiculo veiculo : listaVeiculo) {
 			System.out.println(cont + " ) " + veiculo.getMarca() + " Nome: "
 					+ veiculo.getNome() + " Cor: " + veiculo.getCor()
-					+ " Preço: R$ " + veiculo.getPreco());
+					+ " PreÃ§o: R$ " + veiculo.getPreco());
 			cont++;
 		}
 	}
@@ -192,76 +194,85 @@ public class Revendedora implements _Revendedora {
 	public void listarVendedor(ArrayList<Vendedor> listaVendedor) {
 		int cont = 1;
 		for (Vendedor vendedor : listaVendedor) {
-			System.out.println(cont  + " ) "
-					+ vendedor.getNome() + " Idade: " + vendedor.getIdade()
-					+ " CPF: " + vendedor.getCpf() + " Salário: R$ "
-					+ vendedor.getSalario() + " Comissão: "
+			System.out.println(cont + " ) " + vendedor.getNome() + " Idade: "
+					+ vendedor.getIdade() + " CPF: " + vendedor.getCpf()
+					+ " SalÃ¡rio: R$ " + vendedor.getSalario() + " ComissÃ£o: "
 					+ vendedor.getComissao() + "%");
 			cont++;
 		}
 	}
 
-	//formatar de uma forma melhor
-	public void listarVendas(){
-		for(Venda venda : listaVenda){
-			System.out.println(venda.getCliente().getNome() + " " + venda.getVendedor().getNome() 
-					+ " " + venda.getVeiculo().getNome());
+	// formatar de uma forma melhor
+	public void listarVendas() {
+		for (Venda venda : listaVenda) {
+			System.out.println(venda.getCliente().getNome() + " "
+					+ venda.getVendedor().getNome() + " "
+					+ venda.getVeiculo().getNome());
 		}
 	}
-	
-	//método que valida somente números ao selecionar uma das opções
-	//do cadastro e menus gerais do sistema
+
+	// mÃ©todo que valida somente nÃºmeros ao selecionar uma das opÃ§Ãµes
+	// do cadastro e menus gerais do sistema
 	public int validarSomenteInteiros() {
 		Scanner lerDados = new Scanner(System.in);
 		int op;
 		try {
 			op = lerDados.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("Insira somente números!");
+			System.out.println("Insira somente numeros inteiros!");
 			op = 0;
 		}
 		return op;
 	}
 
-	//método que efetua venda e salva em uma lista de vendas
-	//fazer validaÃ§Ãµes
+	// mÃ©todo que efetua venda e salva em uma lista de vendas
+	// fazer validaÃƒÂ§ÃƒÂµes
 	public void efetuarVenda() {
-		// TODO Auto-generated method stub
+		
 		Scanner lerDados = new Scanner(System.in);
-		
-		System.out.println("3 ) Pessoa Física");
-		System.out.println("4 ) Pessoa Jurídica");
-		
-		System.out.print("Selecione tipo de Pessoa pelo nÃºmero: ");
+
+		System.out.println("*****X-Car - Sistema de Vendas de VeIculos*****");
+		System.out.println("*****         TIPO DE CLIENTE             *****");
+		System.out.println("*		3 ) PESSOA FISICA             *");
+		System.out.println("* 		4 ) PESSOA JURIDICA           *");
+		System.out.println("***********************************************");
+		System.out.print("Selecione: ");
 		int n = lerDados.nextInt();
-		
-		System.out.println("******Lista de Clientes*******");
+
+		System.out.println("*****X-Car - Sistema de Vendas de VeIculos*****");
+		System.out.println("*****         LISTA DE CLIENTES           *****");
 		listarCliente(n);
-		
-		System.out.print("Selecione um dos clientes pelo nÃºmero: ");
+		System.out.println("***********************************************");
+		System.out.print("Selecione: ");
 		int op = lerDados.nextInt();
-		Pessoa cliente = (n == 3) ?  listaClientePf.get(op-1) :
-						 (n == 4) ?  listaClientePj.get(op-1): null;
-		
-		System.out.println("Lista de Vendedores");				 
+		Pessoa cliente = (n == 3) ? listaClientePf.get(op - 1)
+				: (n == 4) ? listaClientePj.get(op - 1) : null;
+
+
+		System.out.println("*****X-Car - Sistema de Vendas de VeIculos*****");
+		System.out.println("*****         LISTA DE VENDEDORES         *****");
 		listarVendedor(listaVendedor);
-		
-		System.out.print("Selecione um vendedor:");
+		System.out.println("***********************************************");
+		System.out.print("Selecione: ");
 		op = lerDados.nextInt();
+		Vendedor vendedor = listaVendedor.get(op - 1);
+
 		
-		Vendedor vendedor = listaVendedor.get(op-1);
-		
-		System.out.println("Lista de VeÃ­culos");
+		System.out.println("*****X-Car - Sistema de Vendas de VeIculos*****");
+		System.out.println("*****         LISTA DE VEICULOS           *****");
 		listarVeiculo(listaVeiculo);
-		
-		System.out.print("Selecione um veÃ­culo: ");
+		System.out.println("***********************************************");
+		System.out.print("Selecione: ");
 		op = lerDados.nextInt();
+		Veiculo veiculo = listaVeiculo.get(op - 1);
+
 		
-		Veiculo veiculo = listaVeiculo.get(op-1);
-		
-		Venda minhaVenda = new Venda(cliente,vendedor,veiculo);
-		
+		Venda minhaVenda = new Venda(cliente, vendedor, veiculo);
 		listaVenda.add(minhaVenda);
+		this.numeroNf++;
+		NotaFiscal nota = new NotaFiscal(this.numeroNf, cliente, vendedor, veiculo);
 		
+		
+
 	}
 }
