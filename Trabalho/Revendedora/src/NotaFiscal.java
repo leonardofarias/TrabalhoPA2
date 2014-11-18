@@ -29,7 +29,7 @@ public class NotaFiscal {
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");
-		System.out.println("*****X-Car - Sistema de Vendas de VeIculos*****");
+		System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
 		System.out.println("**************   NOTA FISCAL   ****************");
 		System.out.println("*                                             *");
 		System.out.println("*No.:"+String.format("%06d", this.numeroNf)+"          DATA:"+getDataHoraAtual()+" *");
@@ -37,9 +37,9 @@ public class NotaFiscal {
 		System.out.println("*	CLIENTE:"+this.cliente.getNome()+"");
 		System.out.println("*	VENDEDOR:"+this.Vendedor.getNome()+"");
 		System.out.println("*                                             *");
-		System.out.println("****************  VEICULO  ********************");
-		System.out.println("*	MARCA:"+this.veiculo.getMarca()+"MODELO:"+this.veiculo.getNome());
-		System.out.println("*	COR:"+this.veiculo.getCor()+"PLACA:"+this.veiculo.getCor());
+		System.out.println("****************  VEÍCULO  ********************");
+		System.out.println("*	MARCA:"+this.veiculo.getMarca()+" MODELO:"+this.veiculo.getNome());
+		System.out.println("*	COR:"+this.veiculo.getCor()+" PLACA:"+this.veiculo.getCor());
 		System.out.println("*	VALOR:"+this.veiculo.getPreco());
 		System.out.println("*                                             *");
 		System.out.println("*                           VALOR TOTAL NOTA  *");
