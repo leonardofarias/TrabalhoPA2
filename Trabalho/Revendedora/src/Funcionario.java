@@ -1,5 +1,5 @@
 
-public  abstract class Funcionario extends ClientePF {
+public abstract class Funcionario extends ClientePF {
 	
 	private int codFuncionario;
 	
