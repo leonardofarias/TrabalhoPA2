@@ -1,4 +1,10 @@
-
+/**
+ * 
+ * @author Diogo, Leonardo e Thiago 
+ * 
+ * Pessoa é uma classe abstrata, utilizada diretamente por ClientePF e ClienetePJ.
+ * 
+ */
 public abstract class Pessoa {
 	
 	private String nome;
