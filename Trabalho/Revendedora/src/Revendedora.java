@@ -192,10 +192,8 @@ public class Revendedora implements _Revendedora {
 	public void listarVendedor(ArrayList<Vendedor> listaVendedor) {
 		int cont = 1;
 		for (Vendedor vendedor : listaVendedor) {
-			System.out.println(cont + " ) " + vendedor.getNome() + " Idade: "
-					+ vendedor.getIdade() + " CPF: " + vendedor.getCpf()
-					+ " Salário: R$ " + vendedor.getSalario() + " Comissão: "
-					+ vendedor.getComissao() + "%");
+			System.out.println(cont + " ) " + vendedor.getNome() + " CPF: " + vendedor.getCpf()
+					+ " Comissão: "	+ vendedor.getComissao() + "%");
 			cont++;
 		}
 	}
@@ -269,6 +267,6 @@ public class Revendedora implements _Revendedora {
 		listaVenda.add(minhaVenda);
 		this.numeroNf++;
 		NotaFiscal nota = new NotaFiscal(this.numeroNf, cliente, vendedor, veiculo);
-
+		
 	}
 }
