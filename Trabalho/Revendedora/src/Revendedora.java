@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Revendedora implements _Revendedora {
 
+	//testando github diogo
 	private ArrayList<ClientePF> listaClientePf;
 	private ArrayList<ClientePJ> listaClientePj;
 	private ArrayList<Vendedor> listaVendedor;
