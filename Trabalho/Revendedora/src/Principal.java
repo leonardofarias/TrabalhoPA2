@@ -1,7 +1,20 @@
+/**
+ * 
+ * @author Diogo, Leonardo e Thiago
+ * 
+ * A Classe Principal instancia a classe Revendedora e é usada como base
+ * para o funcionamento do sistema, pois roda o menu principal.
+ *
+ */
+
 public class Principal {
 
 	public static void main(String[] args) {
 		
+		/**
+		 * Revendedora é a classe que trabalha as outras classes para a manipulação
+		 * dos dados. 
+		 */
 		Revendedora xcar = new Revendedora();
 
 		int op = -1;
