@@ -1,8 +1,11 @@
 /**
  * 
  * @author Diogo,Leonardo,Thiago 
+ * 
  * Classe venda utilizada em nossa revendedora para efetuar venda
+ * 
  * recebe classes do tipo Pessoa e Veículo
+ * 
  */
 public class Venda {
 

@@ -1,7 +1,9 @@
 /**
  * 
  * @author Diogo,Leonardo,Thiago
+ * 
  * Classe que defini o objeto Veiculo com seus atributos
+ * 
  */
 public class Veiculo {
 	

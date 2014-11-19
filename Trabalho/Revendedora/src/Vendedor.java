@@ -1,7 +1,9 @@
 /**
  * 
  * @author Diogo,Leonardo,Thiago
+ * 
  * Classe específica para definir um vendedor, classe filha de funcionário
+ * 
  */
 public class Vendedor extends Funcionario {
 	
