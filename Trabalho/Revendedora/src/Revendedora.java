@@ -12,6 +12,7 @@ public class Revendedora implements _Revendedora {
 	private Integer numeroNf;
 	private Scanner lerDados;
 
+
 	public Revendedora() {
 		listaClientePf = new ArrayList<ClientePF>();
 		listaClientePj = new ArrayList<ClientePJ>();
@@ -177,6 +178,8 @@ public class Revendedora implements _Revendedora {
 				cont++;
 			}
 		}
+		
+		
 	}
 
 	public void listarVeiculo(ArrayList<Veiculo> listaVeiculo) {
@@ -198,17 +201,34 @@ public class Revendedora implements _Revendedora {
 		}
 	}
 
-	// formatar de uma forma melhor
+	/**
+	 * Metodo responsavel por listar todas as vendas e apresentar o valor total 
+	 * arrecadado.
+	 */
 	public void listarVendas() {
+		Double valorTotalVendas = 0.00;
+		System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
+		System.out.println("*****    RESUMO DE VENDAS REALIZADAS      *****");
+		System.out.println("***********************************************");
+		System.out.println(" ");
+		int cont = 1;
 		for (Venda venda : listaVenda) {
-			System.out.println(venda.getCliente().getNome() + " "
-					+ venda.getVendedor().getNome() + " "
-					+ venda.getVeiculo().getNome());
+			System.out.println(cont++ +") CLIENTE:"+venda.getCliente().getNome());
+			System.out.println("   CARRO:"+venda.getVeiculo().getNome());
+			System.out.println("   VENDEDOR:"+ venda.getVendedor().getNome());
+			System.out.println("   VALOR:"+ venda.getVeiculo().getPreco());
+			System.out.println(" ");
+			valorTotalVendas += venda.getVeiculo().getPreco();
 		}
+		System.out.println("***********************************************");
+		System.out.println("   VALOR TOTAL DAS VENDAS: "+valorTotalVendas);
+		System.out.println("***********************************************");
 	}
 
-	// metodo que valida somente numeros ao selecionar uma das opcoes
-	// do cadastro e menus gerais do sistema
+	/**
+	 * metodo que valida somente numeros inteiros ao selecionar uma das opcoes
+	 * do cadastro e menus gerais do sistema 
+	 */
 	public int validarSomenteInteiros() {
 		Scanner lerDados = new Scanner(System.in);
 		int op;
@@ -221,52 +241,86 @@ public class Revendedora implements _Revendedora {
 		return op;
 	}
 
-	// metodo que efetua venda e salva em uma lista de vendas
-	// fazer validacoes
+	
+	/**
+	 * metodo que efetua venda e salva em uma lista de vendas
+	 * fazer validacoes 
+	 */
 	public void efetuarVenda() {
 		
 		Scanner lerDados = new Scanner(System.in);
-
+		int op = 0;
+		int n = 0;
+		Pessoa cliente,vendedor;
+		Veiculo veiculo;
+do{
 		System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
 		System.out.println("*****         TIPO DE CLIENTE             *****");
 		System.out.println("*		3 ) PESSOA FÍSICA             *");
 		System.out.println("* 		4 ) PESSOA JURÍDICA           *");
 		System.out.println("***********************************************");
 		System.out.print("Selecione: ");
-		int n = lerDados.nextInt();
+		n = op = validarSomenteInteiros();
+}while(op != 3 && op !=4);
 
-		System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
-		System.out.println("*****         LISTA DE CLIENTES           *****");
-		listarCliente(n);
-		System.out.println("***********************************************");
-		System.out.print("Selecione: ");
-		int op = lerDados.nextInt();
-		Pessoa cliente = (n == 3) ? listaClientePf.get(op - 1)
-				: (n == 4) ? listaClientePj.get(op - 1) : null;
-
-
-		System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
-		System.out.println("*****         LISTA DE VENDEDORES         *****");
-		listarVendedor(listaVendedor);
-		System.out.println("***********************************************");
-		System.out.print("Selecione: ");
-		op = lerDados.nextInt();
-		Vendedor vendedor = listaVendedor.get(op - 1);
-
+do{
+	do{
+			System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
+			System.out.println("*****         LISTA DE CLIENTES           *****");
+			listarCliente(n);
+			System.out.println("***********************************************");
+			System.out.print("Selecione: ");
+			op = validarSomenteInteiros();
+	}while(op == 0);
+	
+		if(n == 3 && op <= listaClientePf.size() && listaClientePf.size() != -1){
+			cliente = listaClientePf.get(op -1);
+		}
+		else if(n == 4 && op <= listaClientePj.size() && listaClientePj.size() != -1){
+			cliente = listaClientePj.get(op -1);
+		}
+		else{
+			cliente = null;
+		}
 		
-		System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
-		System.out.println("*****         LISTA DE VEÍCULOS           *****");
-		listarVeiculo(listaVeiculo);
-		System.out.println("***********************************************");
-		System.out.print("Selecione: ");
-		op = lerDados.nextInt();
-		Veiculo veiculo = listaVeiculo.get(op - 1);
+}while(cliente == null);
 
-		
+do{
+	do{
+			System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
+			System.out.println("*****         LISTA DE VENDEDORES         *****");
+			listarVendedor(listaVendedor);
+			System.out.println("***********************************************");
+			System.out.print("Selecione: ");
+			op = validarSomenteInteiros();
+	}while(op == 0);
+			if(op <= listaVendedor.size() && listaVendedor.size() != -1){
+				vendedor = listaVendedor.get(op - 1);
+			}else{
+				vendedor = null;
+			}
+}while(vendedor == null);
+
+do{
+	do{		
+			System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
+			System.out.println("*****         LISTA DE VEÍCULOS           *****");
+			listarVeiculo(listaVeiculo);
+			System.out.println("***********************************************");
+			System.out.print("Selecione: ");
+			op = validarSomenteInteiros();
+	}while(op == 0);
+			if(op <= listaVendedor.size() && listaVendedor.size() != -1){
+				veiculo = listaVeiculo.get(op - 1);
+			}else{
+				veiculo = null;
+			}
+}while(veiculo ==null);
+			
 		Venda minhaVenda = new Venda(cliente, vendedor, veiculo);
 		listaVenda.add(minhaVenda);
 		this.numeroNf++;
-		NotaFiscal nota = new NotaFiscal(this.numeroNf, cliente, vendedor, veiculo);
+		NotaFiscal nota = new NotaFiscal(this.numeroNf, minhaVenda);
 		
 	}
 }

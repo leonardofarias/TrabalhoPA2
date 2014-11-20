@@ -5,21 +5,29 @@ import java.text.SimpleDateFormat;
 
 public class NotaFiscal {
 
-	private Pessoa Vendedor;
-	private Veiculo veiculo;
-	private Pessoa cliente;
+	private Venda venda;
 	private Integer numeroNf;
 	
+	
+	/**
+	 * Metodo responsavel por retornar a data e hora atual já formatada.
+	 * @author Diogo, Leonardo e Thiago
+	 * @return date
+	 */
 	private String getDataHoraAtual(){
 		DateFormat formatoDataNf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
 		return formatoDataNf.format(date);
 	}
 	
-	public NotaFiscal(Integer numeroNf, Pessoa cliente, Pessoa vendedor, Veiculo veiculo){
-		this.cliente = cliente;
-		this.Vendedor = vendedor;
-		this.veiculo = veiculo;
+	/**
+	 * Metodo responsavel por montar a NF e exibir ao usuário
+	 * @author Diogo, Leonardo e Thiago
+	 * @param numeroNf
+	 * @param minhaVenda
+	 */
+	public NotaFiscal(Integer numeroNf, Venda minhaVenda){
+		this.venda = minhaVenda;
 		this.numeroNf = numeroNf;
 		
 		System.out.println("");
@@ -34,16 +42,16 @@ public class NotaFiscal {
 		System.out.println("*                                             *");
 		System.out.println("*No.:"+String.format("%06d", this.numeroNf)+"          DATA:"+getDataHoraAtual()+" *");
 		System.out.println("*                                             *");
-		System.out.println("*	CLIENTE:"+this.cliente.getNome()+"");
-		System.out.println("*	VENDEDOR:"+this.Vendedor.getNome()+"");
+		System.out.println("*	CLIENTE:"+this.venda.getCliente().getNome()+"");
+		System.out.println("*	VENDEDOR:"+this.venda.getVendedor().getNome()+"");
 		System.out.println("*                                             *");
 		System.out.println("****************  VEÍCULO  ********************");
-		System.out.println("*	MARCA:"+this.veiculo.getMarca()+" MODELO:"+this.veiculo.getNome());
-		System.out.println("*	COR:"+this.veiculo.getCor()+" PLACA:"+this.veiculo.getCor());
-		System.out.println("*	VALOR:"+this.veiculo.getPreco());
+		System.out.println("*	MARCA:"+this.venda.getVeiculo().getMarca()+" MODELO:"+this.venda.getVeiculo().getNome());
+		System.out.println("*	COR:"+this.venda.getVeiculo().getCor());
+		System.out.println("*	VALOR:"+this.venda.getVeiculo().getPreco());
 		System.out.println("*                                             *");
 		System.out.println("*                           VALOR TOTAL NOTA  *");
-		System.out.println("*                           R$"+this.veiculo.getPreco()	+"");
+		System.out.println("*                           R$"+this.venda.getVeiculo().getPreco()	+"");
 		System.out.println("***********************************************");
 		System.out.println("");
 		System.out.println("");

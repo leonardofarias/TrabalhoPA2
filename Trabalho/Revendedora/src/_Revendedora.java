@@ -1,6 +1,6 @@
 /**
  * 
- * @author Leonardo
+ * @author Diogo, Leonardo e Thiago
  * 
  * Classe abstrata que define classes que devem ser obrigatórias
  * 
