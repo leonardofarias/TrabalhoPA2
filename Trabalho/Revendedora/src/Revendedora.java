@@ -207,6 +207,9 @@ public class Revendedora implements _Revendedora {
 	 */
 	public void listarVendas() {
 		Double valorTotalVendas = 0.00;
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
 		System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
 		System.out.println("*****    RESUMO DE VENDAS REALIZADAS      *****");
 		System.out.println("***********************************************");
@@ -223,6 +226,9 @@ public class Revendedora implements _Revendedora {
 		System.out.println("***********************************************");
 		System.out.println("   VALOR TOTAL DAS VENDAS: "+valorTotalVendas);
 		System.out.println("***********************************************");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
 	}
 
 	/**
@@ -236,7 +242,7 @@ public class Revendedora implements _Revendedora {
 			op = lerDados.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("Insira somente números inteiros!");
-			op = 0;
+			op = -1;
 		}
 		return op;
 	}
@@ -251,76 +257,110 @@ public class Revendedora implements _Revendedora {
 		Scanner lerDados = new Scanner(System.in);
 		int op = 0;
 		int n = 0;
-		Pessoa cliente,vendedor;
+		Pessoa cliente;
+		Pessoa vendedor;
 		Veiculo veiculo;
+		
 do{
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
 		System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
-		System.out.println("*****         TIPO DE CLIENTE             *****");
+		System.out.println("*****    ESCOLHA UM TIPO DE CLIENTE       *****");
 		System.out.println("*		3 ) PESSOA FÍSICA             *");
 		System.out.println("* 		4 ) PESSOA JURÍDICA           *");
+		System.out.println("* 		0 ) DESISTIR DA VENDA         *");
 		System.out.println("***********************************************");
 		System.out.print("Selecione: ");
 		n = op = validarSomenteInteiros();
-}while(op != 3 && op !=4);
+}while(op != 3 && op != 4 && op != 0);
 
+if(op != 0){ //IF 1
 do{
 	do{
+			System.out.println(" ");
+			System.out.println(" ");
+			System.out.println(" ");
 			System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
-			System.out.println("*****         LISTA DE CLIENTES           *****");
+			System.out.println("*****        ESCOLHA UM CLIENTE           *****");
 			listarCliente(n);
+			System.out.println("0 ) DESISTIR DA VENDA");
 			System.out.println("***********************************************");
 			System.out.print("Selecione: ");
 			op = validarSomenteInteiros();
-	}while(op == 0);
-	
-		if(n == 3 && op <= listaClientePf.size() && listaClientePf.size() != -1){
-			cliente = listaClientePf.get(op -1);
-		}
-		else if(n == 4 && op <= listaClientePj.size() && listaClientePj.size() != -1){
-			cliente = listaClientePj.get(op -1);
-		}
-		else{
-			cliente = null;
+	}while(op == -1 && op != 0);
+		cliente = null;
+		if(op != 0){	
+			if(n == 3 && op <= listaClientePf.size() && listaClientePf.size() != -1){
+				cliente = listaClientePf.get(op -1);
+			}
+			else if(n == 4 && op <= listaClientePj.size() && listaClientePj.size() != -1){
+				cliente = listaClientePj.get(op -1);
+			}
+			else{
+				cliente = null;
+			}
 		}
 		
 }while(cliente == null);
+if(op != 0){ //IF 2	
+
+
 
 do{
 	do{
+			System.out.println(" ");
+			System.out.println(" ");
+			System.out.println(" ");
 			System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
 			System.out.println("*****         LISTA DE VENDEDORES         *****");
 			listarVendedor(listaVendedor);
+			System.out.println("0 ) DESISTIR DA VENDA");
 			System.out.println("***********************************************");
 			System.out.print("Selecione: ");
 			op = validarSomenteInteiros();
-	}while(op == 0);
+	}while(op == -1);
+		vendedor = null;
+		if(op != 0){
 			if(op <= listaVendedor.size() && listaVendedor.size() != -1){
 				vendedor = listaVendedor.get(op - 1);
 			}else{
 				vendedor = null;
 			}
-}while(vendedor == null);
+		}
+}while(vendedor == null && op != 0);
 
+if(op != 0){ //IF 3
 do{
 	do{		
+			System.out.println(" ");
+			System.out.println(" ");
+			System.out.println(" ");
 			System.out.println("*****X-Car - Sistema de Vendas de Veículos*****");
 			System.out.println("*****         LISTA DE VEÍCULOS           *****");
 			listarVeiculo(listaVeiculo);
+			System.out.println("0 ) DESISTIR DA VENDA");
 			System.out.println("***********************************************");
 			System.out.print("Selecione: ");
 			op = validarSomenteInteiros();
-	}while(op == 0);
+	}while(op == -1);
+		veiculo = null;
+		if(op != 0){
 			if(op <= listaVendedor.size() && listaVendedor.size() != -1){
 				veiculo = listaVeiculo.get(op - 1);
 			}else{
 				veiculo = null;
 			}
-}while(veiculo ==null);
-			
+		}
+}while(veiculo == null && op != 0);
+if(op != 0){ //IF 4			
 		Venda minhaVenda = new Venda(cliente, vendedor, veiculo);
 		listaVenda.add(minhaVenda);
 		this.numeroNf++;
 		NotaFiscal nota = new NotaFiscal(this.numeroNf, minhaVenda);
-		
+}//fim IF 4
+}//fim IF 3
+}//fim IF 2
+}//fim IF 1		
 	}
 }
