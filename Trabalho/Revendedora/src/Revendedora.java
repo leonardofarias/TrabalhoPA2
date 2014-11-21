@@ -12,7 +12,7 @@ public class Revendedora implements _Revendedora {
 	private Integer numeroNf;
 	private Scanner lerDados;
 
-
+	
 	public Revendedora() {
 		listaClientePf = new ArrayList<ClientePF>();
 		listaClientePj = new ArrayList<ClientePJ>();
@@ -302,7 +302,7 @@ do{
 			}
 		}
 		
-}while(cliente == null);
+}while(cliente == null && op != 0);
 if(op != 0){ //IF 2	
 
 
