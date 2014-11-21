@@ -2,9 +2,9 @@
  * 
  * @author Diogo, Leonardo e Thiago
  * 
- * Interface que define classes que devem ser obrigatórias
+ * Interface que define métodos que devem ser obrigatórios
  * 
- * no momento que  for implementada em uma classe
+ * no momento que  for implementada em uma classe.
  * 
  */
 public interface _Revendedora {
