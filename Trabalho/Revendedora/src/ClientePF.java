@@ -8,6 +8,7 @@
 public class ClientePF extends Pessoa {
 	
 	private String cpf;
+	private int teste;
 
 	public String getCpf() {
 		return cpf;
