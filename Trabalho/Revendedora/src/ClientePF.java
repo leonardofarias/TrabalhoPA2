@@ -2,13 +2,13 @@
  * 
  * @author Diogo, Leonardo e Thiago
  * 
- * ClientePF é utilizado pela classe Funcionario.
+ * ClientePF Ã© utilizado pela classe Funcionario.
  *
  */
 public class ClientePF extends Pessoa {
 	
 	private String cpf;
-	private int teste;
+
 
 	public String getCpf() {
 		return cpf;
